@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "i18nexus";
+import Link from "next/link";
 export default function QuickStartPage() {
   const {
     t
