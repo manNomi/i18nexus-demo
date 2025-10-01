@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { translations } from "@/lib/i18n";
-
-import { I18nProvider } from "i18nexus";
+import { cookies } from "next/headers";
+import ClientProvider from "./components/ClientProvider";
+import Sidebar from "./components/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,16 +22,26 @@ export const metadata: Metadata = {
     "Complete React i18n toolkit with cookie-based language management, Google Sheets integration, and automatic code transformation tools",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const currentLanguage = cookieStore.get("i18n-language")?.value || "en";
+
   return (
-    <html lang="en">
+    <html lang={currentLanguage} className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <I18nProvider translations={translations}>{children}</I18nProvider>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-hidden`}>
+        <ClientProvider
+          translations={translations}
+          initialLanguage={currentLanguage}>
+          <div className="flex h-full">
+            <Sidebar />
+            <main className="flex-1 overflow-y-auto">{children}</main>
+          </div>
+        </ClientProvider>
       </body>
     </html>
   );

@@ -15,7 +15,7 @@
     "i18n:listen": "i18nexus listen"
   },
   "dependencies": {
-    "i18nexus": "^2.0.6",
+    "i18nexus": "^2.1.0",
     "next": "15.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
