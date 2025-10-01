@@ -118,12 +118,14 @@ export default function HomePage() {
             {/* GIF Placeholder - 실제 GIF로 교체하세요 */}
             <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-6xl mb-4">🎬</div>
-                <p className="text-slate-400 text-lg">
-                  {t("t-wrapper 실행 데모 GIF")}
-                </p>
-                <p className="text-slate-500 text-sm mt-2">
-                  {t("(여기에 실제 GIF가 들어갑니다)")}
+                <img 
+                  src="/de.gif" 
+                  alt={t("t-wrapper 실행 데모")}
+                  className="mx-auto rounded-lg shadow-lg border border-slate-700"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                />
+                <p className="text-slate-400 text-lg mt-4">
+                  {t("t-wrapper 실행 데모")}
                 </p>
               </div>
             </div>
