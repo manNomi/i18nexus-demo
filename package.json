@@ -15,12 +15,10 @@
     "i18n:listen": "i18nexus listen"
   },
   "dependencies": {
-    "i18next": "^25.5.2",
-    "i18nexus": "file:../i18nexus",
+    "i18nexus": "^2.0.6",
     "next": "15.5.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^16.0.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -47,11 +45,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manNomi/i18nexus.git",
-    "directory": "packages/i18nexus-demo"
+    "url": "git+https://github.com/manNomi/i18nexus-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/manNomi/i18nexus/issues"
+    "url": "https://github.com/manNomi/i18nexus-demo/issues"
   },
-  "homepage": "https://github.com/manNomi/i18nexus#readme"
+  "homepage": "https://github.com/manNomi/i18nexus-demo#readme"
 }
